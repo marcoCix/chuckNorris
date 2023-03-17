@@ -2,9 +2,14 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './styles/App.css'
 import EditorialContent from './components/EditorialContent'
+import Button from './components/Button'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [joke, setJoke] = useState("")
+
+  function loadJoke(){
+    console.log("fetch del gioco")
+  }
 
   return (
     <div className="App">
@@ -22,13 +27,13 @@ function App() {
       <Button 
         content="Carica ili joke"
         variant="dark"
-        clbk="{loadJoke}"
+        clbk={loadJoke}
       />
 
       <Button 
         content="Copia il testo"
         variant="dark"
-        clbk="{loadJoke}"
+        clbk={loadJoke}
       />
 
 
