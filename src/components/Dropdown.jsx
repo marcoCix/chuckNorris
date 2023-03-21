@@ -1,9 +1,12 @@
 import '../styles/Dropdown.css'
 
 function Dropdown({list, clbk}){
+    function change (e){
+        clbk(e.currentTarget.value)
+    }
     return(
         <div className='Dropdown'>
-            <select>
+            <select onChange={(e)=>{change(e)}}>
                 <option value="">
                     SEGLI UNA CATEGORIA
                 </option>
