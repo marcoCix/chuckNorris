@@ -1,3 +1,16 @@
 .Button{
-    background-color: red;
+    margin-top: 14px;
+    width: 14%;
+    padding: 16px 0px;
+    border-radius: 5px;
+    color: #D5DDBC;
+    text-align: center;
+}
+
+.enabled{
+    background-color: #931F1D;
+}
+
+.disabled{
+    background-color: #AA9190;
 }

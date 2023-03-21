@@ -11,6 +11,10 @@ function App() {
     console.log("fetch del gioco")
   }
 
+  function copyJoke(){
+    console.log("joke copiato")
+  }
+
   return (
     <div className="App">
       
@@ -25,15 +29,15 @@ function App() {
       }
 
       <Button 
-        content="Carica ili joke"
-        variant="dark"
+        content = "Carica il joke"
+        variant = "enabled"
         clbk={loadJoke}
       />
 
       <Button 
-        content="Copia il testo"
-        variant="dark"
-        clbk={loadJoke}
+        content = "Copia il testo"
+        variant = {joke == "" ? "disabled":"enabled"}
+        clbk={copyJoke}
       />
 
 

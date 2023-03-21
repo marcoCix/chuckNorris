@@ -1,8 +1,9 @@
 import '../styles/Button.css'
 
 function Button({content, variant, clbk}){
+
     return(
-        <div className='Button'>
+        <div className={`Button ${variant}`}>
             {content}
         </div>
     )
