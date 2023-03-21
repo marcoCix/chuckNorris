@@ -4,18 +4,26 @@ import './styles/App.css'
 import EditorialContent from './components/EditorialContent'
 import Button from './components/Button'
 import Dropdown from './components/Dropdown'
+import Canva from './components/Canva'
 
 function App() {
 
   const [joke, setJoke] = useState("")
   const [categories, setCategories] = useState([])
+  const [category, setCategory] = useState("")
 
   function loadJoke(){
-    console.log("fetch del gioco")
+    let url = category !== "" ? `https://api.chucknorris.io/jokes/random?category=${category}` : "https://api.chucknorris.io/jokes/random"
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {setJoke(data.value)});
   }
 
   function copyJoke(){
-    console.log("joke copiato")
+    if(joke !== ""){
+      navigator.clipboard.writeText(joke)
+      alert("joke copiato")
+    }
   }
 
   function loadCategories(){
@@ -40,9 +48,12 @@ function App() {
 
       <Dropdown
         list={categories}
-        clbk={setCategories}
+        clbk={setCategory}
       />
 
+      <Canva 
+        joke= {joke}
+      />
 
       <Button 
         content = "Carica il joke"
